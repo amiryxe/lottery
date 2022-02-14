@@ -1,0 +1,25 @@
+export default function Sphere() {
+    const nums = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+
+    const renderNodes = () => {
+        return Array.from({ length: 12 }, (v, i) => i).map(i => (
+            <div key={i} className={'plane plane-' + i}>
+                {Array.from({ length: 36 }, (v, j) => j).map(j => {
+                    return (
+                        <div key={j} className={'spoke spoke-' + j}>
+                            <div className="dot">{nums[Math.floor(Math.random() * 10)]}</div>
+                        </div>
+                    );
+                })}
+            </div>
+        ));
+    }
+
+    return (
+        <div className="main-wrapper">
+            <div className="sphere-wrapper">
+                {renderNodes()}
+            </div>
+        </div>
+    )
+} 
