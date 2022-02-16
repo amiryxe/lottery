@@ -1,6 +1,4 @@
 .main-wrapper {
-  display: flex;
-  position: absolute;
   transform-style: preserve-3d;
   perspective: 400px;
   left: 0;
@@ -10,13 +8,15 @@
   align-items: center;
   justify-content: center;
 }
+
 .sphere-wrapper {
   transform-style: preserve-3d;
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   position: relative;
   animation: rotate3d 20s linear infinite;
 }
+
 .plane {
   position: absolute;
   transform-style: preserve-3d;
@@ -38,14 +38,15 @@
 }
 .dot {
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   left: -7.5px;
   top: 100%;
   border-radius: 50%;
   text-align: center;
-  line-height: 1rem;
+  line-height: 1.2rem;
   color: #000;
+  font-weight: 900;
 }
 .spoke.spoke-1 {
   transform: rotateZ(10deg);
