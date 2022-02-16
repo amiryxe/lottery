@@ -1,16 +1,10 @@
 import './assets/style/main.scss';
-import Sphere from './components/Sphere';
+import Main from './containers/Main';
 
 function App() {
   return (
     <div className="App">
-      <Sphere />
-
-      <div className="star-field">
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-      </div>
+      <Main />
     </div>
   );
 }

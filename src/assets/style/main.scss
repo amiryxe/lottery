@@ -14,6 +14,7 @@ body {
   overflow: hidden;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
   font-family: "Lalezar", cursive;
+  color: #fff;
 }
 .main-wrapper {
   display: flex;
@@ -57,12 +58,12 @@ body {
   position: absolute;
   width: 15px;
   height: 15px;
-  background: #ffffff;
   left: -7.5px;
   top: 100%;
   border-radius: 50%;
   text-align: center;
   line-height: 1rem;
+  color: #000;
 }
 .spoke.spoke-1 {
   transform: rotateZ(10deg);
