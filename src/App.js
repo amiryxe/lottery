@@ -2,12 +2,15 @@ import 'sahel-font/dist/font-face.css';
 import './assets/style/main.scss';
 import 'boxicons';
 import Main from './containers/Main';
+import MainState from './context/MainState';
 
 function App() {
   return (
-    <div className="App">
-      <Main />
-    </div>
+    <MainState>
+      <div className="App">
+        <Main />
+      </div>
+    </MainState>
   );
 }
 

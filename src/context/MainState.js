@@ -1,38 +1,43 @@
-import mainContext from "./mainContext";
+import MainContext from "./mainContext";
 import { useState } from "react";
 
-export default function MainState({ children }) {
-    const [winnerList, setWinnerList] = [
+function MainState({ children }) {
+    const [winnerList, setWinnerList] = useState([
         {
             id: 1,
-            num: 23456,
+            value: 96153,
             type: 'any'
         },
         {
             id: 2,
-            num: 78634,
+            value: 67953,
             type: 'any'
         },
         {
             id: 3,
-            num: 98345,
+            value: 18901,
             type: 'any'
         },
         {
             id: 4,
-            num: 10098,
+            value: 70093,
             type: 'any'
         },
         {
             id: 5,
-            num: 43098,
+            value: 73056,
             type: 'any'
         }
-    ];
+    ]);
 
     return (
-        <MainState.Provider value={{}}>
+        <MainContext.Provider value={{
+            winnerList,
+            setWinnerList
+        }}>
             {children}
-        </MainState.Provider>
+        </MainContext.Provider>
     )
 }
+
+export default MainState;

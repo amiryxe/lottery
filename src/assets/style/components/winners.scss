@@ -8,10 +8,70 @@
     color: #333;
     background: #fff;
     border-radius: 1rem;
-    border-left: 3px solid $red_color;
+    border-left: 5px solid $red_color;
     height: 4rem;
-    line-height: 4rem;
-    text-align: center;
+    line-height: 4.5rem;
+    text-align: right;
+    padding-right: 1rem;
     font-weight: 900;
+    font-size: 3rem;
+    color: $red_color;
+    position: relative;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5rem;
+    transform: scale(0);
+    animation: scaleAnim 0.5s forwards;
+
+    &::before {
+      content: "🎉";
+      position: absolute;
+      left: 0.5rem;
+      bottom: -1rem;
+      font-size: 3.5rem;
+    }
+  }
+
+  &__current {
+    position: absolute;
+    top: 7%;
+    font-size: 7rem;
+    font-weight: 900;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
+      1px 4px 1px #919191, 1px 5px 1px #919191, 1px 6px 1px #919191,
+      1px 7px 1px #919191, 1px 8px 1px #919191, 1px 9px 1px #919191,
+      1px 10px 1px #919191, 1px 18px 6px rgba(16, 16, 16, 0.4),
+      1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
+      1px 30px 60px rgba(16, 16, 16, 0.4);
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+      animation: numberAnim 0.9s ease-out;
+    }
+  }
+}
+
+@keyframes numberAnim {
+  from {
+    transform: translate(-50%, 20rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleAnim {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
   }
 }

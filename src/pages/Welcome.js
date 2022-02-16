@@ -5,7 +5,7 @@ export default function Welcome() {
         <>
             <Link to='/lottery'>
                 <button className="btn big-button">
-                    شروع قرعه‌کشی
+                    صفحه قرعه‌کشی
                 </button>
             </Link>
 
