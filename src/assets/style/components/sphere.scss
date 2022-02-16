@@ -33,7 +33,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 175px;
+  height: 195px;
   width: 0px;
 }
 .dot {
@@ -47,6 +47,9 @@
   line-height: 1.2rem;
   color: #000;
   font-weight: 900;
+  // border: 1px solid white;
+  // background: red !important;
+  // box-shadow: 0 0 5px 5px rgba($color: red, $alpha: 0.5);
 }
 .spoke.spoke-1 {
   transform: rotateZ(10deg);

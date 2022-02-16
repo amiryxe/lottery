@@ -1,9 +1,12 @@
 import Sphere from "../components/Sphere"
+import Winners from "../components/Winners"
 
 export default function Lottery() {
     return (
         <>
             <Sphere />
+            <Winners />
+
             <button className="go-button">
                 یافتن برندگان
             </button>

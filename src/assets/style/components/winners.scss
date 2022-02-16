@@ -1,0 +1,17 @@
+.winners {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  min-width: 300px;
+
+  &__item {
+    color: #333;
+    background: #fff;
+    border-radius: 1rem;
+    border-left: 3px solid $red_color;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    font-weight: 900;
+  }
+}

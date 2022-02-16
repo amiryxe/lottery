@@ -23,6 +23,7 @@ button {
   padding: 0.5rem 2rem;
   border-radius: 2rem;
   color: $red_color;
+  font-weight: bold;
 }
 
 .go-button {
@@ -137,4 +138,11 @@ button {
   position: absolute;
   right: 2rem;
   bottom: 2rem;
+}
+
+.normal-button {
+  background: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
