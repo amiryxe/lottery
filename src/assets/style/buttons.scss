@@ -1,0 +1,23 @@
+button {
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  border: none;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 10px rgba($color: #fff, $alpha: 0.3);
+  }
+
+  &:active {
+    box-shadow: 0 0 10px 10px rgba($color: rgb(255, 217, 0), $alpha: 0.5);
+  }
+}
+
+.big-button {
+  font-size: 2.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+  color: $red_color;
+}

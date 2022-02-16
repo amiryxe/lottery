@@ -6,6 +6,7 @@
   src: url("https://fonts.gstatic.com/s/lalezar/v12/zrfl0HLVx-HwTP82UaA.ttf")
     format("truetype");
 }
+
 html,
 body {
   margin: 0;
@@ -16,6 +17,17 @@ body {
   font-family: "Lalezar", cursive;
   color: #fff;
 }
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+@import "./variables";
+@import "./buttons";
+@import "./app";
+
 .main-wrapper {
   display: flex;
   position: absolute;
