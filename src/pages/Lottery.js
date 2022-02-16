@@ -1,13 +1,18 @@
 import Sphere from "../components/Sphere"
 import Winners from "../components/Winners"
+import confetti from "canvas-confetti";
 
 export default function Lottery() {
+    const clickHandler = () => {
+        confetti();
+    }
+
     return (
         <>
             <Sphere />
             <Winners />
 
-            <button className="go-button">
+            <button className="go-button" onClick={clickHandler}>
                 یافتن برندگان
             </button>
 
