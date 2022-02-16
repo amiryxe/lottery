@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Lalezar";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/lalezar/v12/zrfl0HLVx-HwTP82UaA.ttf")
+    format("truetype");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  font-family: "Lalezar", cursive;
+  color: #fff;
+  direction: rtl;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
