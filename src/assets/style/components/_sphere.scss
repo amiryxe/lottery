@@ -1,4 +1,26 @@
+// -----------------------------------------------------
+// If you like this, be sure to also check my Jellyfish
+// pen that was inspired by this one:
+// https://codepen.io/iamlark/pen/opyBNy
+// -----------------------------------------------------
+
+$radius: 400px;
+$dotSize: 20px;
+$spokesNum: 36;
+$planesNum: 12;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #333;
+}
+
 .main-wrapper {
+  display: flex;
+  position: absolute;
   transform-style: preserve-3d;
   perspective: 400px;
   left: 0;
@@ -7,12 +29,13 @@
   right: 0;
   align-items: center;
   justify-content: center;
+  transform: rotate(90deg);
 }
 
 .sphere-wrapper {
   transform-style: preserve-3d;
-  width: 400px;
-  height: 400px;
+  width: $radius;
+  height: $radius;
   position: relative;
   animation: rotate3d 20s linear infinite;
 }
@@ -24,277 +47,100 @@
   right: 0;
   bottom: 0;
   left: 0;
-  box-shadow: 0 10px 20px rgba($color: #fff, $alpha: 0.2);
+  box-shadow: 0 5px 5px 0 rgba($color: #fff, $alpha: 0.2);
   border-radius: 50%;
 }
+
 .spoke {
   transform-origin: 0 0;
   transform-style: preserve-3d;
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 195px;
+  height: $radius/2;
   width: 0px;
+  // background: rgba(255,255,255,.05);
 }
+
+@function unit($num, $unit: px) {
+  $result: $num;
+  @if ($unit && $unit != px) {
+    $result: $num + $unit;
+  }
+
+  @return $result;
+}
+
 .dot {
   position: absolute;
-  width: 17px;
-  height: 17px;
-  left: -7.5px;
-  top: 100%;
+  width: $dotSize;
+  height: $dotSize;
+  line-height: $dotSize;
   border-radius: 50%;
-  text-align: center;
-  line-height: 1.2rem;
-  color: #000;
+  left: -$dotSize/2;
+  top: 100%;
+  color: #333;
   font-weight: 900;
-  // border: 1px solid white;
-  // background: red !important;
-  // box-shadow: 0 0 5px 5px rgba($color: red, $alpha: 0.5);
-}
-.spoke.spoke-1 {
-  transform: rotateZ(10deg);
-}
-.spoke.spoke-2 {
-  transform: rotateZ(20deg);
-}
-.spoke.spoke-3 {
-  transform: rotateZ(30deg);
-}
-.spoke.spoke-4 {
-  transform: rotateZ(40deg);
-}
-.spoke.spoke-5 {
-  transform: rotateZ(50deg);
-}
-.spoke.spoke-6 {
-  transform: rotateZ(60deg);
-}
-.spoke.spoke-7 {
-  transform: rotateZ(70deg);
-}
-.spoke.spoke-8 {
-  transform: rotateZ(80deg);
-}
-.spoke.spoke-9 {
-  transform: rotateZ(90deg);
-}
-.spoke.spoke-10 {
-  transform: rotateZ(100deg);
-}
-.spoke.spoke-11 {
-  transform: rotateZ(110deg);
-}
-.spoke.spoke-12 {
-  transform: rotateZ(120deg);
-}
-.spoke.spoke-13 {
-  transform: rotateZ(130deg);
-}
-.spoke.spoke-14 {
-  transform: rotateZ(140deg);
-}
-.spoke.spoke-15 {
-  transform: rotateZ(150deg);
-}
-.spoke.spoke-16 {
-  transform: rotateZ(160deg);
-}
-.spoke.spoke-17 {
-  transform: rotateZ(170deg);
-}
-.spoke.spoke-18 {
-  transform: rotateZ(180deg);
-}
-.spoke.spoke-19 {
-  transform: rotateZ(190deg);
-}
-.spoke.spoke-20 {
-  transform: rotateZ(200deg);
-}
-.spoke.spoke-21 {
-  transform: rotateZ(210deg);
-}
-.spoke.spoke-22 {
-  transform: rotateZ(220deg);
-}
-.spoke.spoke-23 {
-  transform: rotateZ(230deg);
-}
-.spoke.spoke-24 {
-  transform: rotateZ(240deg);
-}
-.spoke.spoke-25 {
-  transform: rotateZ(250deg);
-}
-.spoke.spoke-26 {
-  transform: rotateZ(260deg);
-}
-.spoke.spoke-27 {
-  transform: rotateZ(270deg);
-}
-.spoke.spoke-28 {
-  transform: rotateZ(280deg);
-}
-.spoke.spoke-29 {
-  transform: rotateZ(290deg);
-}
-.spoke.spoke-30 {
-  transform: rotateZ(300deg);
-}
-.spoke.spoke-31 {
-  transform: rotateZ(310deg);
-}
-.spoke.spoke-32 {
-  transform: rotateZ(320deg);
-}
-.spoke.spoke-33 {
-  transform: rotateZ(330deg);
-}
-.spoke.spoke-34 {
-  transform: rotateZ(340deg);
-}
-.spoke.spoke-35 {
-  transform: rotateZ(350deg);
-}
-.plane.plane-1 {
-  transform: rotateY(18deg);
-}
-.plane.plane-2 {
-  transform: rotateY(36deg);
-}
-.plane.plane-3 {
-  transform: rotateY(54deg);
-}
-.plane.plane-4 {
-  transform: rotateY(72deg);
-}
-.plane.plane-5 {
-  transform: rotateY(90deg);
-}
-.plane.plane-6 {
-  transform: rotateY(108deg);
-}
-.plane.plane-7 {
-  transform: rotateY(126deg);
-}
-.plane.plane-8 {
-  transform: rotateY(144deg);
-}
-.plane.plane-9 {
-  transform: rotateY(162deg);
-}
-.spoke-0 .dot,
-.spoke-36 .dot {
-  animation: pulsate 1s infinite 0s alternate both;
-  background-color: #ff9955;
-}
-.spoke-1 .dot,
-.spoke-35 .dot {
-  animation: pulsate 1s infinite 0.05555556s alternate both;
-  background-color: #ffb555;
-}
-.spoke-2 .dot,
-.spoke-34 .dot {
-  animation: pulsate 1s infinite 0.11111111s alternate both;
-  background-color: #ffd255;
-}
-.spoke-3 .dot,
-.spoke-33 .dot {
-  animation: pulsate 1s infinite 0.16666667s alternate both;
-  background-color: #ffee55;
-}
-.spoke-4 .dot,
-.spoke-32 .dot {
-  animation: pulsate 1s infinite 0.22222222s alternate both;
-  background-color: #f4ff55;
-}
-.spoke-5 .dot,
-.spoke-31 .dot {
-  animation: pulsate 1s infinite 0.27777778s alternate both;
-  background-color: #d7ff55;
-}
-.spoke-6 .dot,
-.spoke-30 .dot {
-  animation: pulsate 1s infinite 0.33333333s alternate both;
-  background-color: #bbff55;
-}
-.spoke-7 .dot,
-.spoke-29 .dot {
-  animation: pulsate 1s infinite 0.38888889s alternate both;
-  background-color: #9fff55;
-}
-.spoke-8 .dot,
-.spoke-28 .dot {
-  animation: pulsate 1s infinite 0.44444444s alternate both;
-  background-color: #82ff55;
-}
-.spoke-9 .dot,
-.spoke-27 .dot {
-  animation: pulsate 1s infinite 0.5s alternate both;
-  background-color: #66ff55;
-}
-.spoke-10 .dot,
-.spoke-26 .dot {
-  animation: pulsate 1s infinite 0.55555556s alternate both;
-  background-color: #55ff60;
-}
-.spoke-11 .dot,
-.spoke-25 .dot {
-  animation: pulsate 1s infinite 0.61111111s alternate both;
-  background-color: #55ff7d;
-}
-.spoke-12 .dot,
-.spoke-24 .dot {
-  animation: pulsate 1s infinite 0.66666667s alternate both;
-  background-color: #55ff99;
-}
-.spoke-13 .dot,
-.spoke-23 .dot {
-  animation: pulsate 1s infinite 0.72222222s alternate both;
-  background-color: #55ffb5;
-}
-.spoke-14 .dot,
-.spoke-22 .dot {
-  animation: pulsate 1s infinite 0.77777778s alternate both;
-  background-color: #55ffd2;
-}
-.spoke-15 .dot,
-.spoke-21 .dot {
-  animation: pulsate 1s infinite 0.83333333s alternate both;
-  background-color: #55ffee;
-}
-.spoke-16 .dot,
-.spoke-20 .dot {
-  animation: pulsate 1s infinite 0.88888889s alternate both;
-  background-color: #55f4ff;
-}
-.spoke-17 .dot,
-.spoke-19 .dot {
-  animation: pulsate 1s infinite 0.94444444s alternate both;
-  background-color: #55d7ff;
-}
-.spoke-18 .dot,
-.spoke-18 .dot {
-  animation: pulsate 1s infinite 1s alternate both;
-  background-color: #55bbff;
-}
+  text-align: center;
+  transform: rotateX(90deg) scale(0.3) translateZ(20px) scaleX(-1);
+}
+
+@mixin place-spokes($spokes: $spokesNum, $i: 1) {
+  @if ($i < $spokes) {
+    $currDeg: unit((360 / $spokes * $i), deg);
+    .spoke.spoke-#{$i} {
+      transform: rotateZ($currDeg);
+    }
+    @include place-spokes($spokes, $i + 1);
+  }
+}
+
+@mixin place-planes($planes: $planesNum, $i: 1) {
+  @if ($i < $planes) {
+    $currDeg: unit(180 / $planes * $i, deg);
+    .plane.plane-#{$i} {
+      transform: rotateY($currDeg);
+    }
+    @include place-planes($planes, $i + 1);
+  }
+}
+
+@mixin animate-dots($spokes: $spokesNum/2, $i: 0) {
+  @if ($i <= $spokes) {
+    $delay: unit($i/$spokes, s);
+    $j: $spokesNum - $i;
+    $colorDeg: (360 / $spokesNum * $i);
+    .spoke-#{$i} .dot,
+    .spoke-#{$j} .dot {
+      animation: pulsate 0.5s infinite $delay alternate both;
+      background-color: adjust-hue(#f95, $colorDeg);
+    }
+    @include animate-dots($spokes, $i + 1);
+  }
+}
+
+@include place-spokes();
+@include place-planes();
+@include animate-dots();
+
 @keyframes rotate3d {
   0% {
-    transform: rotate3d(0, 1, 1, 0deg);
+    transform: rotate3d(0, 1, 0, 0deg);
   }
-  15% {
-    transform: rotate3d(0, 1, 1, 90deg);
+  25% {
+    transform: rotate3d(0, 1, 0, 90deg);
   }
   50% {
-    transform: rotate3d(0, 1, 1, 180deg);
+    transform: rotate3d(0, 1, 0, 180deg);
   }
-  90% {
-    transform: rotate3d(0, 1, 1, 270deg);
+  75% {
+    transform: rotate3d(0, 1, 0, 270deg);
   }
   100% {
-    transform: rotate3d(0, 1, 1, 360deg);
+    transform: rotate3d(0, 1, 0, 360deg);
   }
 }
+
 @keyframes pulsate {
   0% {
     transform: rotateX(90deg) scale(0.3) translateZ(20px) scaleX(-1);
