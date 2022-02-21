@@ -31,7 +31,7 @@ body {
   width: $radius;
   height: $radius;
   position: relative;
-  animation: rotate3d 20s linear infinite;
+  animation: rotate3d 25s linear infinite;
 }
 
 .plane {
@@ -42,7 +42,7 @@ body {
   bottom: 0;
   left: 0;
   border-radius: 50%;
-  border: 3px solid rgb(196, 196, 196);
+  border: 2px solid rgba($color: #fff, $alpha: 0.5);
   // box-shadow: 0 0 1px 1px rgb(196, 196, 196);
 
   // &::before {
@@ -85,7 +85,6 @@ body {
   color: #333;
   font-weight: 900;
   text-align: center;
-  // transform: rotateX(90deg) scale(0.3) translateZ(20px) scaleX(-1);
 }
 
 @mixin place-spokes($spokes: $spokesNum, $i: 1) {
@@ -113,11 +112,17 @@ body {
     $delay: unit($i/$spokes, s);
     $j: $spokesNum - $i;
     $colorDeg: (360 / $spokesNum * $i);
+
     .spoke-#{$i} .dot,
     .spoke-#{$j} .dot {
       animation: pulsate 0.5s infinite $delay alternate both;
       background-color: adjust-hue(#ff6600, $colorDeg);
     }
+
+    .spoke-#{$j} .dot {
+      animation: pulsateRev 0.5s infinite $delay alternate both;
+    }
+
     @include animate-dots($spokes, $i + 1);
   }
 }
@@ -150,5 +155,15 @@ body {
   }
   100% {
     transform: rotateX(90deg) scale(1) translateZ(0px) scaleX(-1);
+  }
+}
+
+@keyframes pulsateRev {
+  0% {
+    transform: rotateX(90deg) scale(0.3) translateZ(20px) scaleX(-1)
+      rotate(180deg);
+  }
+  100% {
+    transform: rotateX(90deg) scale(1) translateZ(0px) scaleX(-1) rotate(180deg);
   }
 }
