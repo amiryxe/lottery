@@ -3,6 +3,15 @@ $dotSize: 20px;
 $spokesNum: 36;
 $planesNum: 12;
 
+@function unit($num, $unit: px) {
+  $result: $num;
+  @if ($unit && $unit != px) {
+    $result: $num + $unit;
+  }
+
+  @return $result;
+}
+
 .main-wrapper {
   display: flex;
   position: absolute;
