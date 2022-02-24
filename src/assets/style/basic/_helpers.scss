@@ -1,0 +1,8 @@
+@function unit($num, $unit: px) {
+  $result: $num;
+  @if ($unit && $unit != px) {
+    $result: $num + $unit;
+  }
+
+  @return $result;
+}

@@ -45,15 +45,6 @@ $planesNum: 12;
   width: 0px;
 }
 
-@function unit($num, $unit: px) {
-  $result: $num;
-  @if ($unit && $unit != px) {
-    $result: $num + $unit;
-  }
-
-  @return $result;
-}
-
 .dot {
   position: absolute;
   width: $dotSize;
