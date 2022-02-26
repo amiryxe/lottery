@@ -6,13 +6,13 @@ import confetti from "canvas-confetti"
 import convertDigits from '../utils/convertDigits'
 
 const arr = []
+
 export default function Lottery() {
     const { winnerList } = useContext(MainContext);
     const [current, setCurrent] = useState('')
     const numbers = winnerList.map(item => item.value).join('')
     const [list, setList] = useState([])
     const [changes, setChanges] = useState('')
-
 
     useEffect(() => {
         if (arr.length > 0) {
