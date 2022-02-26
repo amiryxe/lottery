@@ -2,7 +2,7 @@ export default function Sphere() {
     const nums = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
 
     const renderNodes = () => {
-        return Array.from({ length: 12 }, (v, i) => i).map(i => (
+        return Array(12).fill(null).map((_, i) => (
             <div key={i} className={'plane plane-' + i}>
                 {Array.from({ length: 36 }, (v, j) => j).map(j => {
                     return (
