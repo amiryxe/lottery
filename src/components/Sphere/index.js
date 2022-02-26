@@ -4,7 +4,7 @@ export default function Sphere() {
     const renderNodes = () => {
         return Array(12).fill(null).map((_, i) => (
             <div key={i} className={'plane plane-' + i}>
-                {Array.from({ length: 36 }, (v, j) => j).map(j => {
+                {Array(36).fill(null).map((_, j) => {
                     return (
                         <div key={j} className={'spoke spoke-' + j}>
                             <div className="dot">{nums[Math.floor(Math.random() * 10)]}</div>
