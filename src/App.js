@@ -14,12 +14,10 @@ const themeOptions = {
   },
   config: {
     initialColorMode: "dark"
-  }
+  },
 }
 
 const theme = extendTheme(themeOptions)
-
-console.log(theme)
 
 function App() {
   return (
