@@ -4,6 +4,7 @@ import Sphere from "../components/Sphere"
 import Winners from "../components/Winners"
 import confetti from "canvas-confetti"
 import convertDigits from '../utils/convertDigits'
+import { useColorMode } from '@chakra-ui/react'
 
 const arr = []
 
@@ -13,6 +14,8 @@ export default function Lottery() {
     const numbers = winnerList.map(item => item.value).join('')
     const [list, setList] = useState([])
     const [changes, setChanges] = useState('')
+
+    const { toggleColorMode } = useColorMode()
 
     useEffect(() => {
         if (arr.length > 0) {
@@ -57,7 +60,7 @@ export default function Lottery() {
                 شروع قرعه‌کشی
             </button>
 
-            <button className="setting-button">
+            <button className="setting-button" onClick={toggleColorMode}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
