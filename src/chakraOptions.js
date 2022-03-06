@@ -11,6 +11,4 @@ const themeOptions = {
     }
 }
 
-console.log(extendTheme())
-
 export default extendTheme(themeOptions)
