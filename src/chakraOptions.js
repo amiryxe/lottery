@@ -8,7 +8,9 @@ const themeOptions = {
         body: `Sahel, -apple-system, 
         BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif, "Apple Color Emoji",
         "Segoe UI Emoji", "Segoe UI Symbol"`
-    }
+    },
 }
+
+console.log(extendTheme(themeOptions))
 
 export default extendTheme(themeOptions)
