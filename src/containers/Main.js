@@ -4,6 +4,7 @@ import Lottery from '../pages/Lottery';
 import Error404 from '../pages/errors/Error404';
 import Header from '../components/layouts/Header';
 import Footer from '../components/layouts/Footer';
+import About from '../pages/About';
 
 export default function Main() {
     return (
@@ -13,6 +14,7 @@ export default function Main() {
                 <Routes>
                     <Route path='/' element={<Welcome />} exact />
                     <Route path="/lottery" element={<Lottery />} exact />
+                    <Route path="/about" element={<About />} exact />
                     <Route path='*' element={<Error404 />} />
                 </Routes>
             </Router>
