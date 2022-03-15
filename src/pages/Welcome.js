@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-    Button,
     Drawer,
     DrawerBody,
     DrawerFooter,
@@ -22,15 +21,14 @@ export default function Welcome() {
                 </button>
             </Link>
 
-            <Link to="/about">
-                <button className='btn normal-button' onClick={() => setIsOpen(true)}>
-                    درباره
-                </button>
-            </Link>
+            <button className='btn normal-button' onClick={() => setIsOpen(true)}>
+                درباره
+            </button>
 
             <Drawer
                 isOpen={isOpen}
                 placement='right'
+                onClose={() => setIsOpen(false)}
             >
                 <DrawerOverlay />
                 <DrawerContent>
