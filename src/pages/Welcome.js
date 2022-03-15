@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
+    Button,
     Drawer,
     DrawerBody,
     DrawerFooter,
@@ -10,6 +12,8 @@ import {
 } from '@chakra-ui/react'
 
 export default function Welcome() {
+    const [isOpen, setIsOpen] = useState(false)
+
     return (
         <>
             <Link to='/lottery'>
@@ -19,7 +23,7 @@ export default function Welcome() {
             </Link>
 
             <Link to="/about">
-                <button className='btn normal-button'>
+                <button className='btn normal-button' onClick={() => setIsOpen(true)}>
                     درباره
                 </button>
             </Link>
@@ -27,8 +31,6 @@ export default function Welcome() {
             <Drawer
                 isOpen={isOpen}
                 placement='right'
-                onClose={onClose}
-                finalFocusRef={btnRef}
             >
                 <DrawerOverlay />
                 <DrawerContent>
@@ -36,14 +38,11 @@ export default function Welcome() {
                     <DrawerHeader>Create your account</DrawerHeader>
 
                     <DrawerBody>
-                        <Input placeholder='Type here...' />
+                        body here
                     </DrawerBody>
 
                     <DrawerFooter>
-                        <Button variant='outline' mr={3} onClick={onClose}>
-                            Cancel
-                        </Button>
-                        <Button colorScheme='blue'>Save</Button>
+                        footer here
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>
