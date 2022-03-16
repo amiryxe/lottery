@@ -6,7 +6,7 @@ export default function Header() {
             <h1>سامانه قرعه‌کشی</h1>
 
             <Link to="/">
-                <button>بازگشت</button>
+                بازگشت
             </Link>
         </div>
     )
