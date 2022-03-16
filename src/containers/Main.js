@@ -9,8 +9,8 @@ import About from '../pages/About';
 export default function Main() {
     return (
         <>
-            <Header />
             <Router>
+                <Header />
                 <Routes>
                     <Route path='/' element={<Welcome />} exact />
                     <Route path="/lottery" element={<Lottery />} exact />
