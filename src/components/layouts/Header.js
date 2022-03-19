@@ -5,7 +5,11 @@ export default function Header() {
         <div className='header-main'>
             <h1>سامانه قرعه‌کشی</h1>
 
-            <Link to="/">
+            <Link to="/" style={{
+                position: 'fixed',
+                left: 5,
+                top: 5
+            }}>
                 بازگشت
             </Link>
         </div>
