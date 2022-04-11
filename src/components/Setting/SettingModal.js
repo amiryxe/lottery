@@ -6,9 +6,11 @@ import {
     ModalFooter,
     ModalBody,
     ModalCloseButton,
+    useDisclosure,
+    Button
 } from '@chakra-ui/react'
 
-function SettingModal({ }) {
+export default function SettingModal({ }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
@@ -19,7 +21,7 @@ function SettingModal({ }) {
                     <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <Lorem count={2} />
+                        content
                     </ModalBody>
 
                     <ModalFooter>
