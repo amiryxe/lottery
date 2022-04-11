@@ -1,10 +1,8 @@
-function SettingModal() {
+function SettingModal({ }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
         <>
-            <Button onClick={onOpen}>Open Modal</Button>
-
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
