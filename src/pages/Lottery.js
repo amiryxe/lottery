@@ -64,7 +64,7 @@ export default function Lottery() {
             </button>
 
             <Button onClick={toggleColorMode}>
-                toggle
+                toggle colors
             </Button>
 
             <button className="setting-button" onClick={onOpen}>
