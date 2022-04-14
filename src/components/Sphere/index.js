@@ -11,7 +11,9 @@ export default function Sphere() {
                 {Array(spokeCount).fill(null).map((_, j) => {
                     return (
                         <div key={j} className={'spoke spoke-' + j}>
-                            <div className="dot">{nums[Math.floor(Math.random() * 10)]}</div>
+                            <div className="dot">
+                                {nums[Math.floor(Math.random() * 10)]}
+                            </div>
                         </div>
                     );
                 })}
