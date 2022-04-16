@@ -80,7 +80,7 @@ export default function Lottery() {
                 </svg>
             </button>
 
-            <SettingModal />
+            <SettingModal isOpen={isOpen} />
         </>
     )
 }
