@@ -10,9 +10,7 @@ import {
     Button
 } from '@chakra-ui/react'
 
-export default function SettingModal({ }) {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-
+export default function SettingModal({ isOpen, onClose }) {
     return (
         <>
             <Modal isOpen={isOpen} onClose={onClose}>
