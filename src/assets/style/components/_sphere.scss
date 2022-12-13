@@ -1,5 +1,5 @@
-$radius: 400px;
-$dotSize: 20px;
+$radius: 450px;
+$dotSize: 25px;
 $spokesNum: 36;
 $planesNum: 12;
 
@@ -61,9 +61,10 @@ $planesNum: 12;
   border-radius: 50%;
   left: -$dotSize/2;
   top: 100%;
-  color: #333;
+  color: #fff;
   font-weight: 900;
   text-align: center;
+  border: 1px solid #000;
 }
 
 @mixin place-spokes($spokes: $spokesNum, $i: 1) {
@@ -90,12 +91,12 @@ $planesNum: 12;
   @if ($i <= $spokes) {
     $delay: unit($i/$spokes, s);
     $j: $spokesNum - $i;
-    $colorDeg: (360 / $spokesNum * $i);
+    $colorDeg: (360 / $spokesNum * $i - 20);
 
     .spoke-#{$i} .dot,
     .spoke-#{$j} .dot {
       animation: pulsate 0.5s infinite $delay alternate both;
-      background-color: adjust-hue(#ff6600, $colorDeg);
+      background-color: adjust-hue(#78be1e, $colorDeg);
     }
 
     .spoke-#{$j} .dot {
@@ -115,13 +116,13 @@ $planesNum: 12;
     transform: rotate3d(0, 1, 0, 0deg);
   }
   25% {
-    transform: rotate3d(0, 1, 0, 90deg);
+    transform: rotate3d(1, 1, 0, 90deg);
   }
   50% {
     transform: rotate3d(0, 1, 0, 180deg);
   }
   75% {
-    transform: rotate3d(0, 1, 0, 270deg);
+    transform: rotate3d(1, 1, 0, 270deg);
   }
   100% {
     transform: rotate3d(0, 1, 0, 360deg);
@@ -130,7 +131,7 @@ $planesNum: 12;
 
 @keyframes pulsate {
   0% {
-    transform: rotateX(90deg) scale(0.3) translateZ(20px) scaleX(-1);
+    transform: rotateX(90deg) scale(0.3) translateZ(15px) scaleX(-1);
   }
   100% {
     transform: rotateX(90deg) scale(1) translateZ(0px) scaleX(-1);
@@ -139,7 +140,7 @@ $planesNum: 12;
 
 @keyframes pulsateRev {
   0% {
-    transform: rotateX(90deg) scale(0.3) translateZ(20px) scaleX(-1)
+    transform: rotateX(90deg) scale(0.3) translateZ(15px) scaleX(-1)
       rotate(180deg);
   }
   100% {
